@@ -9,11 +9,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img 
-                src="https://i0.wp.com/www.kalsangrestaurants.com/wp-content/uploads/2021/10/cropped-Kalsang-Logo.jpg?resize=100%2C100&ssl=1" 
-                alt="Kalsang Logo" 
-                className="w-14 h-14 rounded-full border-2 border-primary"
-              />
+              <span
+                className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center font-serif font-bold text-2xl shadow-lg shadow-primary/30 border-2 border-primary/20"
+                aria-hidden="true"
+              >
+                K
+              </span>
               <h2 className="text-3xl font-bold text-primary tracking-tight">KALSANG</h2>
             </div>
             <p className="text-gray-500 leading-relaxed">

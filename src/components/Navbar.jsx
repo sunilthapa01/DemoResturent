@@ -58,19 +58,23 @@ const Navbar = () => {
       )}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        <motion.a 
-          href="#home" 
+        <motion.a
+          href="#home"
           onClick={(e) => scrollToSection(e, '#home')}
           className="flex items-center gap-3 group"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <img 
-            src="https://i0.wp.com/www.kalsangrestaurants.com/wp-content/uploads/2021/10/cropped-Kalsang-Logo.jpg?resize=100%2C100&ssl=1" 
-            alt="Kalsang Logo" 
-            className="w-12 h-12 rounded-full object-cover border-2 border-primary group-hover:rotate-[360deg] transition-transform duration-700"
-          />
-          <span className="text-2xl font-bold text-primary tracking-tighter hidden sm:block">
+          <span
+            className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center font-serif font-bold text-xl shadow-lg shadow-primary/30 border-2 border-white/40 group-hover:rotate-[360deg] transition-transform duration-700"
+            aria-hidden="true"
+          >
+            K
+          </span>
+          <span className={cn(
+            "text-2xl font-bold tracking-tighter",
+            isScrolled ? "text-primary" : "text-white"
+          )}>
             KALSANG
           </span>
         </motion.a>
