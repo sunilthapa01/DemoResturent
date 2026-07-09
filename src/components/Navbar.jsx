@@ -42,11 +42,12 @@ const Navbar = () => {
     e.preventDefault()
     const targetId = href.replace('#', '')
     const elem = document.getElementById(targetId)
-    window.scrollTo({
-      top: elem.offsetTop - 80,
-      behavior: 'smooth'
-    })
+    if (!elem) return
     setMobileMenuOpen(false)
+    requestAnimationFrame(() => {
+      const top = elem.getBoundingClientRect().top + window.scrollY - 80
+      window.scrollTo({ top, behavior: 'smooth' })
+    })
   }
 
   return (
@@ -86,14 +87,19 @@ const Navbar = () => {
               transition={{ delay: idx * 0.1 }}
               className={cn(
                 "px-4 py-2 text-sm font-semibold transition-all rounded-full relative group",
-                activeSection === link.id ? "text-primary" : "text-foreground/70 hover:text-primary"
+                activeSection === link.id
+                  ? (isScrolled ? "text-primary" : "text-white")
+                  : (isScrolled ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white")
               )}
             >
               <span className="relative z-10 uppercase tracking-widest text-[10px]">{link.name}</span>
               {activeSection === link.id && (
-                <motion.div 
+                <motion.div
                   layoutId="activeNav"
-                  className="absolute inset-0 bg-primary/10 rounded-full -z-0"
+                  className={cn(
+                    "absolute inset-0 rounded-full -z-0",
+                    isScrolled ? "bg-primary/10" : "bg-white/20 backdrop-blur-md"
+                  )}
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -113,8 +119,14 @@ const Navbar = () => {
         <motion.button
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="md:hidden p-2 rounded-xl bg-primary/5 text-primary"
+          className={cn(
+            "md:hidden p-2 rounded-xl transition-colors",
+            isScrolled || mobileMenuOpen
+              ? "bg-primary/10 text-primary"
+              : "bg-white/15 backdrop-blur-md text-white border border-white/20"
+          )}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </motion.button>
