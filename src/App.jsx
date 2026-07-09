@@ -46,22 +46,22 @@ function App() {
         <section id="home">
           <Hero />
         </section>
-        <section id="about" className="py-20 md:py-32">
+        <section id="about" className="py-16 sm:py-20 md:py-32">
           <About />
         </section>
-        <section id="menu" className="py-20 md:py-32 bg-muted/50">
+        <section id="menu" className="py-16 sm:py-20 md:py-32 bg-muted/50">
           <Menu />
         </section>
-        <section className="py-20 md:py-32">
+        <section className="py-16 sm:py-20 md:py-32">
           <SpecialHighlights />
         </section>
-        <section id="gallery" className="py-20 md:py-32 bg-muted/50">
+        <section id="gallery" className="py-16 sm:py-20 md:py-32 bg-muted/50">
           <Gallery />
         </section>
-        <section id="locations" className="py-20 md:py-32">
+        <section id="locations" className="py-16 sm:py-20 md:py-32">
           <Locations />
         </section>
-        <section id="contact" className="py-20 md:py-32 bg-muted/50">
+        <section id="contact" className="py-16 sm:py-20 md:py-32 bg-muted/50">
           <Contact />
         </section>
       </main>

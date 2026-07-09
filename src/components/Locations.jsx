@@ -29,16 +29,16 @@ const locations = [
 
 const Locations = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="text-center mb-16">
-        <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Visit Us</span>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="text-center mb-12 sm:mb-16">
+        <span className="text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-4 block">Visit Us</span>
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Locations</h2>
-        <p className="text-gray-500 max-w-2xl mx-auto">
+        <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
           We are spread across the beautiful city of Dehradun. Find the one nearest to you.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
         {locations.map((loc, index) => (
           <motion.div
             key={index}
@@ -48,20 +48,20 @@ const Locations = () => {
             transition={{ delay: index * 0.1 }}
           >
             <Card className="h-full overflow-hidden border-none shadow-2xl rounded-3xl flex flex-col">
-              <div className="h-64 w-full">
-                <iframe 
-                  src={loc.map} 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen="" 
-                  loading="lazy" 
+              <div className="h-56 sm:h-64 w-full">
+                <iframe
+                  src={loc.map}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title={loc.name}
                   className="filter grayscale contrast-125"
                 ></iframe>
               </div>
-              <CardContent className="p-8 flex-grow">
+              <CardContent className="p-6 sm:p-8 flex-grow">
                 <h3 className="text-2xl font-bold mb-6 text-primary">{loc.name}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">

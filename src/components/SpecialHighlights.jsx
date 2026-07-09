@@ -44,16 +44,16 @@ const highlights = [
 
 const SpecialHighlights = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="text-center mb-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="text-center mb-12 sm:mb-20">
         <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Why Choose Us</span>
-        <h2 className="text-5xl md:text-6xl font-bold mb-6">The Kalsang <span className="text-primary italic">Difference</span></h2>
-        <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">The Kalsang <span className="text-primary italic">Difference</span></h2>
+        <p className="text-gray-500 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
           We don't just serve food; we serve experiences. Discover the pillars that make us Dehradun's most beloved restaurant.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {highlights.map((item, index) => (
           <motion.div
             key={index}
@@ -61,18 +61,18 @@ const SpecialHighlights = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="p-10 bg-white rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-border/50 group relative overflow-hidden"
+            className="p-6 sm:p-10 bg-white rounded-[2rem] sm:rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-border/50 group relative overflow-hidden"
           >
-            <div className={cn("mb-8 p-5 rounded-[2rem] w-fit text-white transition-transform duration-500 group-hover:scale-110 shadow-lg", item.color)}>
+            <div className={cn("mb-6 sm:mb-8 p-4 sm:p-5 rounded-[1.5rem] sm:rounded-[2rem] w-fit text-white transition-transform duration-500 group-hover:scale-110 shadow-lg", item.color)}>
               {item.icon}
             </div>
-            <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
             <p className="text-gray-500 leading-relaxed text-sm">
               {item.desc}
             </p>
-            {/* Decorative Sparkle */}
-            <div className="absolute top-8 right-8 text-primary/10 group-hover:text-primary/30 transition-colors">
-              <Sparkles size={32} />
+            <div className="absolute top-6 right-6 sm:top-8 sm:right-8 text-primary/10 group-hover:text-primary/30 transition-colors">
+              <Sparkles size={28} className="sm:hidden" />
+              <Sparkles size={32} className="hidden sm:block" />
             </div>
           </motion.div>
         ))}

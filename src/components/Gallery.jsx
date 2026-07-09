@@ -37,28 +37,28 @@ const Gallery = () => {
   }, [])
 
   return (
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="flex flex-col md:flex-row justify-between md:items-end mb-10 sm:mb-16 gap-6 sm:gap-8">
         <div className="max-w-2xl">
           <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Our Visual Story</span>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">A Glimpse into <span className="text-primary italic">Kalsang</span></h2>
-          <p className="text-gray-500 text-lg leading-relaxed">
-            Every corner of our restaurant tells a story, and every dish is a masterpiece. 
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">A Glimpse into <span className="text-primary italic">Kalsang</span></h2>
+          <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
+            Every corner of our restaurant tells a story, and every dish is a masterpiece.
             Explore the vibrant culture and aesthetic vibes of Dehradun's favorite café.
           </p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           {['All', 'Food', 'Interior', 'Vibe'].map((cat) => (
-            <button key={cat} className="px-6 py-2 rounded-full border border-border hover:bg-primary hover:text-white transition-all font-semibold text-sm">
+            <button key={cat} className="px-4 sm:px-6 py-2 rounded-full border border-border hover:bg-primary hover:text-white transition-all font-semibold text-xs sm:text-sm">
               {cat}
             </button>
           ))}
         </div>
       </div>
 
-      <div 
-        ref={galleryRef} 
-        className="columns-1 sm:columns-2 lg:columns-4 gap-4 space-y-4"
+      <div
+        ref={galleryRef}
+        className="columns-2 lg:columns-4 gap-3 sm:gap-4 space-y-3 sm:space-y-4"
       >
         {images.map((item, index) => (
           <motion.div 
@@ -118,12 +118,12 @@ const Gallery = () => {
                   <X size={24} />
                 </button>
               </div>
-              <div className="p-8 bg-white/5 backdrop-blur-xl border-t border-white/10 flex justify-between items-center text-white">
+              <div className="p-4 sm:p-8 bg-white/5 backdrop-blur-xl border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-white">
                 <div>
-                  <p className="text-primary font-bold uppercase tracking-widest text-xs mb-1">{selectedImage.category}</p>
-                  <h3 className="text-2xl font-bold">Kalsang Authentic Moments</h3>
+                  <p className="text-primary font-bold uppercase tracking-widest text-[10px] sm:text-xs mb-1">{selectedImage.category}</p>
+                  <h3 className="text-lg sm:text-2xl font-bold">Kalsang Authentic Moments</h3>
                 </div>
-                <button className="flex items-center gap-2 px-6 py-3 bg-primary rounded-full font-bold hover:bg-primary/90 transition-all">
+                <button className="flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-primary rounded-full font-bold text-sm sm:text-base hover:bg-primary/90 transition-all shrink-0">
                   Book This Vibe <ExternalLink size={18} />
                 </button>
               </div>

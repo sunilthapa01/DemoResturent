@@ -48,43 +48,43 @@ const Hero = () => {
       </motion.div>
 
       {/* Content */}
-      <motion.div 
+      <motion.div
         style={{ opacity }}
-        className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white hero-content"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center text-white hero-content"
       >
         <motion.div
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold mb-8 uppercase tracking-[0.2em]"
+          className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs font-bold mb-6 sm:mb-8 uppercase tracking-[0.15em] sm:tracking-[0.2em] text-center"
         >
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          The Finest Tibetan Cuisine in Uttarakhand
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0" />
+          <span>The Finest Tibetan Cuisine in Uttarakhand</span>
         </motion.div>
-        
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 tracking-tighter leading-[0.9]">
+
+        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-6 sm:mb-8 tracking-tighter leading-[0.95] sm:leading-[0.9]">
           Savor the <br />
           <span className="text-primary italic font-serif">Himalayan</span> Soul
         </h1>
-        
-        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-          Experience a legendary culinary tradition that blends ancient Tibetan spices with modern Asian flair. 
+
+        <p className="text-base sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+          Experience a legendary culinary tradition that blends ancient Tibetan spices with modern Asian flair.
           A journey of taste, culture, and warmth.
         </p>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           <motion.button
             onClick={(e) => scrollToSection(e, 'menu')}
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
-            className="w-full sm:w-auto px-12 py-5 bg-primary text-white rounded-full font-bold text-lg flex items-center justify-center gap-3 transition-all hover:bg-primary/90 shadow-2xl shadow-primary/40 group"
+            className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-primary text-white rounded-full font-bold text-base sm:text-lg flex items-center justify-center gap-3 transition-all hover:bg-primary/90 shadow-2xl shadow-primary/40 group"
           >
-            Explore Menu 
+            Explore Menu
             <ChevronRight size={22} className="group-hover:translate-x-1 transition-transform" />
           </motion.button>
-          
+
           <motion.button
             onClick={(e) => scrollToSection(e, 'contact')}
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
-            className="w-full sm:w-auto px-12 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold text-lg flex items-center justify-center gap-3 transition-all hover:bg-white/20"
+            className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold text-base sm:text-lg flex items-center justify-center gap-3 transition-all hover:bg-white/20"
           >
             <Play size={20} className="fill-white" />
             Book a Table

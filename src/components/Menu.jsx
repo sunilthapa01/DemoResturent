@@ -31,8 +31,8 @@ const Menu = () => {
   const [activeTab, setActiveTab] = useState('tibetan-specials')
 
   return (
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="text-center mb-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="text-center mb-12 sm:mb-20">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -42,20 +42,20 @@ const Menu = () => {
           <Zap size={12} className="fill-primary" />
           Freshly Prepared Every Day
         </motion.div>
-        <h2 className="text-5xl md:text-6xl font-bold mb-6">Our Culinary <span className="text-primary italic">Legacy</span></h2>
-        <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">Our Culinary <span className="text-primary italic">Legacy</span></h2>
+        <p className="text-gray-500 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
           Embark on a gastronomic journey through the Himalayas. Each dish is a testament to our 15 years of culinary expertise.
         </p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <div className="flex justify-center mb-16 overflow-x-auto pb-4 scrollbar-hide">
-          <TabsList className="bg-white/40 backdrop-blur-md p-1.5 rounded-full border border-border/50 h-auto gap-2">
+        <div className="flex justify-start md:justify-center mb-10 sm:mb-16 overflow-x-auto pb-4 scrollbar-hide -mx-4 sm:mx-0 px-4 sm:px-0">
+          <TabsList className="bg-white/40 backdrop-blur-md p-1.5 rounded-full border border-border/50 h-auto gap-1 sm:gap-2 flex-nowrap">
             {Object.keys(menuData).map((cat) => (
-              <TabsTrigger 
+              <TabsTrigger
                 key={cat}
-                value={cat} 
-                className="rounded-full px-8 py-3 transition-all data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg text-xs font-bold uppercase tracking-widest"
+                value={cat}
+                className="rounded-full px-4 sm:px-8 py-2.5 sm:py-3 transition-all data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg text-[10px] sm:text-xs font-bold uppercase tracking-widest whitespace-nowrap"
               >
                 {cat.replace('-', ' ')}
               </TabsTrigger>
@@ -70,7 +70,7 @@ const Menu = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 outline-none"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 outline-none"
           >
             {menuData[activeTab].map((item, index) => (
               <motion.div
@@ -80,44 +80,44 @@ const Menu = () => {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
               >
-                <Card className="overflow-hidden border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500 group rounded-[2.5rem] bg-white h-full flex flex-col">
-                  <div className="relative h-64 overflow-hidden p-3">
-                    <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
-                      <img 
-                        src={item.image} 
-                        alt={item.name} 
+                <Card className="overflow-hidden border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500 group rounded-[2rem] sm:rounded-[2.5rem] bg-white h-full flex flex-col">
+                  <div className="relative h-56 sm:h-64 overflow-hidden p-3">
+                    <div className="w-full h-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden relative">
+                      <img
+                        src={item.image}
+                        alt={item.name}
                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                     </div>
-                    <div className="absolute top-6 right-6">
+                    <div className="absolute top-5 right-5 sm:top-6 sm:right-6">
                       <div className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
                         <Star size={14} className="fill-yellow-400 text-yellow-400" />
                         <span className="text-xs font-bold">{item.rating}</span>
                       </div>
                     </div>
                   </div>
-                  <CardContent className="px-8 pb-8 pt-4 flex-grow flex flex-col">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="flex flex-col gap-1">
-                        <div className="flex gap-1 mb-2">
+                  <CardContent className="px-5 sm:px-8 pb-6 sm:pb-8 pt-4 flex-grow flex flex-col">
+                    <div className="flex justify-between items-start gap-3 mb-4">
+                      <div className="flex flex-col gap-1 min-w-0">
+                        <div className="flex gap-1 mb-2 flex-wrap">
                           {item.tags.map(tag => (
                             <span key={tag} className="text-[10px] font-bold text-primary uppercase tracking-tighter">
                               • {tag}
                             </span>
                           ))}
                         </div>
-                        <h3 className="font-bold text-xl group-hover:text-primary transition-colors">
+                        <h3 className="font-bold text-lg sm:text-xl group-hover:text-primary transition-colors">
                           {item.name}
                         </h3>
                       </div>
-                      <span className="text-primary font-bold text-xl bg-primary/5 px-4 py-1 rounded-2xl">{item.price}</span>
+                      <span className="text-primary font-bold text-base sm:text-xl bg-primary/5 px-3 sm:px-4 py-1 rounded-2xl shrink-0">{item.price}</span>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">
+                    <p className="text-gray-500 text-sm leading-relaxed mb-6 sm:mb-8 flex-grow">
                       {item.desc}
                     </p>
-                    <button className="w-full py-4 bg-muted hover:bg-primary hover:text-white transition-all rounded-2xl font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 group/btn">
+                    <button className="w-full py-3 sm:py-4 bg-muted hover:bg-primary hover:text-white transition-all rounded-2xl font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 group/btn">
                       <ShoppingBag size={16} className="group-hover/btn:scale-110 transition-transform" />
                       Order Now
                     </button>
@@ -133,13 +133,13 @@ const Menu = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mt-20 p-10 bg-primary rounded-[3rem] text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden"
+        className="mt-12 sm:mt-20 p-6 sm:p-10 bg-primary rounded-[2rem] sm:rounded-[3rem] text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8 relative overflow-hidden text-center md:text-left"
       >
-        <div className="relative z-10">
-          <h3 className="text-3xl font-bold mb-2">Craving something specific?</h3>
-          <p className="text-white/70 text-lg">Download our full digital menu for the complete selection.</p>
+        <div className="relative z-10 w-full md:w-auto">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-2">Craving something specific?</h3>
+          <p className="text-white/70 text-base sm:text-lg">Download our full digital menu for the complete selection.</p>
         </div>
-        <button className="relative z-10 px-10 py-5 bg-white text-primary rounded-full font-bold text-lg shadow-2xl hover:scale-105 transition-all">
+        <button className="relative z-10 w-full md:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-white text-primary rounded-full font-bold text-base sm:text-lg shadow-2xl hover:scale-105 transition-all shrink-0">
           View Full Menu (PDF)
         </button>
         {/* Background Decor */}

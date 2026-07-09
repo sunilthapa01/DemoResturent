@@ -3,8 +3,8 @@ import { Award, Users, Coffee, Flame, ChevronRight } from 'lucide-react'
 
 const About = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="grid lg:grid-cols-2 gap-20 items-center">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
         {/* Image Column */}
         <div className="relative">
           <motion.div
@@ -15,10 +15,10 @@ const About = () => {
             className="relative z-10"
           >
             <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] -z-10 blur-2xl" />
-            <img 
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop" 
-              alt="Kalsang Interior" 
-              className="rounded-[3.5rem] shadow-2xl w-full h-[650px] object-cover"
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
+              alt="Kalsang Interior"
+              className="rounded-[2rem] sm:rounded-[3.5rem] shadow-2xl w-full h-[380px] sm:h-[500px] lg:h-[650px] object-cover"
             />
             
             {/* Floating Info Cards */}
@@ -70,44 +70,46 @@ const About = () => {
         >
           <div>
             <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4 block">The Heritage</span>
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
               Crafting Stories <br />
               Since <span className="text-primary italic">2008.</span>
             </h2>
-            <p className="text-gray-500 text-xl leading-relaxed">
-              Kalsang is more than just a restaurant; it's a piece of Tibetan heritage nestled in the hills of Uttarakhand. 
+            <p className="text-gray-500 text-base sm:text-lg lg:text-xl leading-relaxed">
+              Kalsang is more than just a restaurant; it's a piece of Tibetan heritage nestled in the hills of Uttarakhand.
               Started as a small cozy corner, we've grown into a beloved destination for foodies seeking the real taste of Lhasa and beyond.
             </p>
           </div>
 
-          <p className="text-gray-500 leading-relaxed">
-            Our wooden interiors, prayer flags, and warm lighting create an atmosphere where stories are shared over steaming pots of thukpa. 
+          <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
+            Our wooden interiors, prayer flags, and warm lighting create an atmosphere where stories are shared over steaming pots of thukpa.
             Every dish is prepared using recipes passed down through generations, ensuring that the soul of our cuisine remains untouched.
           </p>
-          
-          <div className="grid grid-cols-2 gap-10 pt-8">
-            <div className="flex items-start gap-4">
-              <div className="p-4 bg-muted rounded-2xl text-primary shrink-0">
-                <Users size={28} />
+
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-10 pt-4 sm:pt-8">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="p-3 sm:p-4 bg-muted rounded-2xl text-primary shrink-0">
+                <Users size={24} className="sm:hidden" />
+                <Users size={28} className="hidden sm:block" />
               </div>
               <div>
-                <h4 className="text-3xl font-bold mb-1 tracking-tighter">500K+</h4>
-                <p className="text-gray-400 text-xs uppercase tracking-widest font-bold">Visitors</p>
+                <h4 className="text-2xl sm:text-3xl font-bold mb-1 tracking-tighter">500K+</h4>
+                <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-widest font-bold">Visitors</p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="p-4 bg-muted rounded-2xl text-primary shrink-0">
-                <Coffee size={28} />
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="p-3 sm:p-4 bg-muted rounded-2xl text-primary shrink-0">
+                <Coffee size={24} className="sm:hidden" />
+                <Coffee size={28} className="hidden sm:block" />
               </div>
               <div>
-                <h4 className="text-3xl font-bold mb-1 tracking-tighter">150+</h4>
-                <p className="text-gray-400 text-xs uppercase tracking-widest font-bold">Recipes</p>
+                <h4 className="text-2xl sm:text-3xl font-bold mb-1 tracking-tighter">150+</h4>
+                <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-widest font-bold">Recipes</p>
               </div>
             </div>
           </div>
 
-          <div className="pt-10">
-            <button className="px-12 py-5 bg-gray-900 text-white rounded-full font-bold text-lg hover:bg-primary transition-all shadow-xl shadow-gray-900/20 flex items-center gap-3 group">
+          <div className="pt-6 sm:pt-10">
+            <button className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-gray-900 text-white rounded-full font-bold text-base sm:text-lg hover:bg-primary transition-all shadow-xl shadow-gray-900/20 flex items-center justify-center gap-3 group">
               Read Our Full Story
               <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </button>

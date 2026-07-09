@@ -3,9 +3,9 @@ import { Instagram, Facebook, Twitter, Youtube } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-background border-t border-border pt-16 sm:pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-border flex flex-col md:row items-center justify-between gap-6">
+        <div className="pt-10 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} Kalsang Restaurant. All rights reserved.
           </p>
